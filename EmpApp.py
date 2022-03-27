@@ -55,7 +55,7 @@ def AddAttend():
         cursor.close()
 
     print("all modification done...")
-    return render_template('attendance.html')
+    return render_template('GetEmpOutput.html')
     
  
    
