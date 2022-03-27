@@ -74,20 +74,21 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container">
      <h5>Employee Information</h5>
 	 <ul class="w3-ul w3-card-4 w3-white">
+		<li class="w3-padding-16">
 	 	<form action="/fetchdata" autocomplete="on" method="POST">
               
 				<div>
 
-			  		{{ attenddance_id }} 
+			  		{{ attendance_ID }} 
 
-			  		{{ emp_ID }} 
+			  		{{ emp_id }} 
 
 			  		{{ attendance_date }} 
 
 			  		{{ attendance_status }} <br><br>
 
 			  		
-			  	</div>
+			</div></li>
 
 		</form>
             <button type="submit" href="/attendance.html" class="w3-button w3-dark-grey ">Attendence Check-In</button>
