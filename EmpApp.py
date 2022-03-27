@@ -36,7 +36,7 @@ def about():
 @app.route("/addAttend", methods=['POST'])
 def AddAttend():
     attendance_ID = request.form.get['attendance_ID',False]
-    emp_ID = request.form['emp_ID']
+    emp_id = request.form['emp_id']
     attendance_date = request.form['attendance_date']
     attendance_status = request.form['attendance_status']
     
@@ -71,26 +71,26 @@ def fetchdata():
     result = cursor.fetchall()
     for row in result:
         print(row)
-    return render_template('GetEmpOutput.html', attendance_id=attendance_id, emp_id=emp_id, attendance_date=attendance_date, attendance_status=attendance_status)
+    return render_template('GetEmpOutput.html', attendance_ID=attendance_ID, emp_id=emp_id, attendance_date=attendance_date, attendance_status=attendance_status)
 
 @app.route("/showData", methods=['POST'])
 def showData():
 
-    attendance_id = request.form['attendance_id']
-    select_employee_query = "SELECT * FROM attendance WHERE attendance_id=%s"
+    attendance_id = request.form['attendance_ID']
+    select_employee_query = "SELECT * FROM attendance WHERE attendance_ID=%s"
     cursor = db_conn.cursor()
     
-    cursor.execute(select_employee_query,(attendance_id))
+    cursor.execute(select_employee_query,(attendance_ID))
     db_conn.commit()
     
     for i in cursor:
-       attendance_id = i[0]
-       emp_ID = i[1]
+       attendance_ID = i[0]
+       emp_id = i[1]
        attendance_date = i[2]
        attendance_status = i[3]
        
     cursor.close()   
-    return render_template('GetEmp.html', attendance_id=attendance_id, emp_ID=emp_ID, attendance_date=attendance_date, attendance_status=attendance_status)
+    return render_template('GetEmp.html', attendance_ID=attendance_ID, emp_id=emp_id, attendance_date=attendance_date, attendance_status=attendance_status)
 
 
 if __name__ == '__main__':
