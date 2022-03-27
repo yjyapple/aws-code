@@ -2,14 +2,16 @@
 # Either add "sudo" before all commands or use "sudo su" first
 
 #!/bin/bash
-yum update -y
-yum install git -y
+yum install git
+sudo yum install git
 git clone https://github.com/yjyapple/aws-code.git
-cd aws-live
+ls
+cd aws-live/
+sudo yum install python3
 pip3 install flask
-pip3 install pymysql
-pip3 install boto3
-python3 EmpApp.py
+sudo pip3 install pymysql
+sudo pip3 install boto3
+sudo python3 EmpApp.py
 
 
 
