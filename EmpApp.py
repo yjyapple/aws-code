@@ -67,10 +67,10 @@ def fetchdata():
     cursor = db_conn.cursor()
     
     cursor.execute(select_employee_query,(attendance_ID,emp_id,attendance_date,attendance_status))
-    db_conn.commit()
+ 
     result = cursor.fetchall()
-    for row in result:
-        print(row)
+    for i in range(len(result)):
+        print(result[i],'\n')
     return render_template('GetEmpOutput.html', attendance_ID=attendance_ID, emp_id=emp_id, attendance_date=attendance_date, attendance_status=attendance_status)
 
 @app.route("/showData", methods=['POST'])
