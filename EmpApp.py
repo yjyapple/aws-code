@@ -64,10 +64,10 @@ def AddAttend():
 def fetchdata():
    
     select_employee_query = "SELECT * FROM attendance"
-    cursor = db_conn.cursor():
+    cursor = db_conn.cursor()
     
     cursor.execute(select_employee_query)
-    db_conn.commit():
+    db_conn.commit()
     result = cursor.fetchall()
     for row in result:
         print(row)
@@ -78,10 +78,10 @@ def showData():
 
     attendance_id = request.form['attendance_id']
     select_employee_query = "SELECT * FROM attendance WHERE attendance_id=%s"
-    cursor = db_conn.cursor():
+    cursor = db_conn.cursor()
     
     cursor.execute(select_employee_query,(attendance_id))
-    db_conn.commit():
+    db_conn.commit()
     
     for i in cursor:
        attendance_id = i[0]
