@@ -66,7 +66,7 @@ def fetchdata():
     select_employee_query = "SELECT * FROM attendance"
     cursor = db_conn.cursor()
     
-    cursor.execute(select_employee_query)
+    cursor.execute(select_employee_query,(attendance_ID,emp_id,attendance_date,attendance_status))
     db_conn.commit()
     result = cursor.fetchall()
     for row in result:
