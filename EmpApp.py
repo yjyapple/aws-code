@@ -69,14 +69,15 @@ def fetchdata():
     cursor.execute(select_employee_query,(attendance_ID,emp_id,attendance_date,attendance_status))
  
     result = cursor.fetchall()
-    for i in range(len(result)):
-        print(result[i],'\n')
+    for i in result:
+        print(i)
+        print("\n")
     return render_template('GetEmpOutput.html', attendance_ID=attendance_ID, emp_id=emp_id, attendance_date=attendance_date, attendance_status=attendance_status)
 
 @app.route("/showData", methods=['POST'])
 def showData():
 
-    attendance_id = request.form['attendance_ID']
+    attendance_ID = request.form['attendance_ID']
     select_employee_query = "SELECT * FROM attendance WHERE attendance_ID=%s"
     cursor = db_conn.cursor()
     
