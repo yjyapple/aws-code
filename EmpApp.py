@@ -20,7 +20,7 @@ db_conn = connections.Connection(
 
 )
 output = {}
-table = 'department'
+table = 'attendance'
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -35,8 +35,8 @@ def about():
 
 @app.route("/addAttend", methods=['POST'])
 def AddAttend():
-    attendance_ID = request.form.get['attendance_ID',True]
-    emp_id = request.form.get['emp_id',True]
+    attendance_ID = request.form.get('attendance_ID')
+    emp_id = request.form['emp_id']
     attendance_date = request.form['attendance_date']
     attendance_status = request.form['attendance_status']
     
@@ -55,7 +55,7 @@ def AddAttend():
         cursor.close()
 
     print("all modification done...")
-    return render_template('GetEmpOutput.html')
+    return render_template('attendance.html')
     
  
    
