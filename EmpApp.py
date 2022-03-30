@@ -36,7 +36,7 @@ def about():
 @app.route("/addAttend", methods=['POST'])
 def AddAttend():
     attendance_ID = request.form.get('attendance_ID')
-    emp_id = request.form['emp_id']
+    emp_id = request.form['emp_ID']
     attendance_date = request.form['attendance_date']
     attendance_status = request.form['attendance_status']
     
@@ -48,7 +48,7 @@ def AddAttend():
 
     try:
 
-        cursor.execute(insert_sql, (attendance_ID, emp_id, attendance_date, attendance_status))
+        cursor.execute(insert_sql, (attendance_ID, emp_ID, attendance_date, attendance_status))
         db_conn.commit()
         
     finally:
@@ -66,13 +66,13 @@ def fetchdata():
     select_employee_query = "SELECT * FROM attendance"
     cursor = db_conn.cursor()
     
-    cursor.execute(select_employee_query,(attendance_ID,emp_id,attendance_date,attendance_status))
+    cursor.execute(select_employee_query,(attendance_ID,emp_ID,attendance_date,attendance_status))
  
     result = cursor.fetchall()
     for i in result:
         print(i)
         print("\n")
-    return render_template('GetEmpOutput.html', attendance_ID=attendance_ID, emp_id=emp_id, attendance_date=attendance_date, attendance_status=attendance_status)
+    return render_template('GetEmpOutput.html', attendance_ID=attendance_ID, emp_ID=emp_ID, attendance_date=attendance_date, attendance_status=attendance_status)
 
 @app.route("/showData", methods=['POST'])
 def showData():
@@ -86,12 +86,12 @@ def showData():
     
     for i in cursor:
        attendance_ID = i[0]
-       emp_id = i[1]
+       emp_ID = i[1]
        attendance_date = i[2]
        attendance_status = i[3]
        
     cursor.close()   
-    return render_template('GetEmp.html', attendance_ID=attendance_ID, emp_id=emp_id, attendance_date=attendance_date, attendance_status=attendance_status)
+    return render_template('GetEmp.html', attendance_ID=attendance_ID, emp_ID=emp_ID, attendance_date=attendance_date, attendance_status=attendance_status)
 
 
 if __name__ == '__main__':
