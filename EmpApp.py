@@ -34,7 +34,7 @@ def about():
 
 
 @app.route("/addAttend", methods=['POST'])
-def AddAttend():
+def addAttend():
     attendance_ID = request.form.get('attendance_ID')
     emp_ID = request.form['emp_ID']
     attendance_date = request.form['attendance_date']
@@ -55,7 +55,7 @@ def AddAttend():
         cursor.close()
 
     print("all modification done...")
-    return render_template('attendance.html')
+    return render_template('GetEmp.html')
     
  
    
