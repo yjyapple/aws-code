@@ -36,7 +36,7 @@ def about():
 @app.route("/addAttend", methods=['POST'])
 def AddAttend():
     attendance_ID = request.form.get('attendance_ID')
-    emp_id = request.form['emp_ID']
+    emp_ID = request.form['emp_ID']
     attendance_date = request.form['attendance_date']
     attendance_status = request.form['attendance_status']
     
