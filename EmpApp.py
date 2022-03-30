@@ -42,7 +42,7 @@ def AddAttend():
     
     
 
-    insert_sql = "INSERT INTO attendance VALUES (%s, %s, %s, %s)"
+    insert_sql = "INSERT INTO attendance (attendance_ID, emp_ID, attendance_date, attendance_status) VALUES (%s, %s, %s, %s)"
     cursor = db_conn.cursor()
 
 
