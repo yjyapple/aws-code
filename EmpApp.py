@@ -27,11 +27,9 @@ table = 'attendance'
 def home():
     return render_template('attendance.html')
 
-
-@app.route("/about", methods=['POST'])
-def about():
-    return render_template('www.intellipaat.com')
-
+@app.route("/addAttendanceData", methods=['POST'])
+def add():
+    return render_template('attendance.html')
 
 @app.route("/addAttend", methods=['POST'])
 def addAttend():
