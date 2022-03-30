@@ -25,7 +25,7 @@ table = 'attendance'
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('attendance.html')
+    return render_template('attendanceHome.html')
 
 @app.route("/addAttendanceData", methods=['POST'])
 def add():
