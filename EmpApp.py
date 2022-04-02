@@ -89,7 +89,7 @@ def showData():
        attendance_status = i[3]
        
     cursor.close()   
-    return render_template('GetEmp.html', attendance_ID=attendance_ID, emp_ID=emp_ID, attendance_date=attendance_date, attendance_status=attendance_status)
+    return render_template('GetEmpOutput.html', attendance_ID=attendance_ID, emp_ID=emp_ID, attendance_date=attendance_date, attendance_status=attendance_status)
 
 
 if __name__ == '__main__':
