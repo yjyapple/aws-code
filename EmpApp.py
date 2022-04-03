@@ -68,8 +68,8 @@ def fetchdata():
 @app.route("/showData", methods=['POST'])
 def showData():
 
-     attendance_ID = request.form.get('attendance_ID')
-    select_employee_query = "SELECT attendance_ID, emp_ID, attendance_date, attendance_status FROM attendance WHERE attendance_ID=%s"
+    attendance_ID = request.form.get('attendance_ID')
+    select_employee_query = "SELECT attendance_ID, emp_ID, attendance_date, attendance_status FROM attendance WHERE attendance_ID = %s"
     cursor = db_conn.cursor()
     
     cursor.execute(select_employee_query,(attendance_ID))
