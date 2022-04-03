@@ -61,8 +61,8 @@ def addAttend():
 @app.route('/fetchdata')        
 def fetchdata():              
     cursor.execute ("SELECT * FROM attendance")
-    data = cursor.fetchall()                       
-    return render_template('GetAllAttendance.html', data=data)
+    i = cursor.fetchall()                       
+    return render_template('GetAllAttendance.html', data=i)
 
 
 @app.route("/showData", methods=['POST'])
