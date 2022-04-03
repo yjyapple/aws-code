@@ -61,20 +61,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5>Attendance Information</h5>
     <ul class="w3-ul w3-card-4 w3-white">
       <li class="w3-padding-16">
-        <form action="/fetchdata" autocomplete="on" method="POST">
-		Attendance ID:<br> <input class="w3-input w3-border" type="text" name="attendance_ID" autofocus size="40"><br><br>
+       <form action="/fetchdata" autocomplete="on" method="POST">
 		<button class="w3-button w3-dark-grey" type="submit"> View All Attendance Record <i class="fa fa-arrow-right"></i></button><br><br>
-	</form>
+	   </form>
       </li>
       <li class="w3-padding-16">
-        <form action="/addAttendanceData" autocomplete="on" method="POST">
+       <form action="/addAttendanceData" autocomplete="on" method="POST">
 		<button class="w3-button w3-dark-grey" type="submit">Check In Attendance <i class="fa fa-arrow-right"></i></button><br><br>
-	</form>
+	   </form>
       </li>
       <li class="w3-padding-16">
-	<form action="/showData" autocomplete="on" method="POST">
-        	<h2 style="color: grey">Enter Attendance ID</h2>
-		Attendance ID:<br> <input class="w3-input w3-border" type="text" name="attendance_ID" autofocus size="40"><br><br>
+	    <form action="/showData" autocomplete="on" method="POST">
 		<button class="w3-button w3-dark-grey" type="submit">Check Employee Attendance Record <i class="fa fa-arrow-right"></i></button><br><br>
 	</form>
       </li>
