@@ -76,13 +76,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                 <form action="/fetchdata" autocomplete="on" method="POST">
                 <div>
                    <table>
-                          {{ attendance_ID }}
-
-                          {{ emp_ID }}
-
-                          {{ attendance_date }}
-			    {{ attendance_status }}
-                                                                                                                                                                                                                       {{ attendance_status }}
+               <tr>   
+	   <th>Attendance ID</th>                                                                                                                 
+           <th>Employee ID</th>
+           <th>Attendance Date</th>
+           <th>Attendance Status</th>                                                                                                            
+	      </tr>
+            <tr>                                                                                                                                  
+         <th>{{ attendance_ID }}</th>                                                                                                           
+        <th>{{ emp_ID }}</th>                                                                                                             
+        <th>{{ attendance_date }}</th>                                                                                                         
+        <th>{{ attendance_status }}</th>    
+         </tr>
+      
                    </table>
 
                 </div></li>
