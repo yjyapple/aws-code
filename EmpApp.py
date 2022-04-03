@@ -58,19 +58,12 @@ def addAttend():
  
    
   
-@app.route("/fetchdata", methods=['POST'])
-def fetchdata():
-   
-    select_employee_query = "SELECT * FROM attendance"
-    cursor = db_conn.cursor()
-    
-    cursor.execute(select_employee_query,(attendance_ID,emp_ID,attendance_date,attendance_status))
- 
-    result = cursor.fetchall()
-    for i in result:
-        print(i)
-        print("\n")
-    return render_template('GetEmpOutput.html', attendance_ID=attendance_ID, emp_ID=emp_ID, attendance_date=attendance_date, attendance_status=attendance_status)
+@app.route('/fetchdata')        
+def fetchdata():              
+    cursor.execute ("SELECT * FROM attendance")
+    data = cursor.fetchall()                       
+    return render_template('GetAllAttendance.html', data=data)
+
 
 @app.route("/showData", methods=['POST'])
 def showData():
