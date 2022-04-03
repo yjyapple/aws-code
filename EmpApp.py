@@ -58,18 +58,17 @@ def addAttend():
  
    
   
-@app.route('/fetchdata')        
-def fetchdata():  
-    cursor = db_conn.cursor()
-    cursor.execute ("SELECT * FROM attendance")
-    i = cursor.fetchall()                       
-    return render_template('GetAllAttendance.html', data=i)
+@app.route("/fetchdata",methods=['POST'])
+def fetchdata():
+    cursor.execute("SELECT * FROM attendance")
+    i = cursor.fetchall()
+    return render_template('GetAllAttendance.html', data=i) 
 
 
 @app.route("/showData", methods=['POST'])
 def showData():
 
-    attendance_ID = request.form['attendance_ID']
+     attendance_ID = request.form.get('attendance_ID')
     select_employee_query = "SELECT attendance_ID, emp_ID, attendance_date, attendance_status FROM attendance WHERE attendance_ID=%s"
     cursor = db_conn.cursor()
     
