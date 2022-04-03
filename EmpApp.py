@@ -59,7 +59,8 @@ def addAttend():
    
   
 @app.route('/fetchdata')        
-def fetchdata():              
+def fetchdata():  
+    cursor = db_conn.cursor()
     cursor.execute ("SELECT * FROM attendance")
     i = cursor.fetchall()                       
     return render_template('GetAllAttendance.html', data=i)
