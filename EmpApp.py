@@ -31,7 +31,7 @@ def home():
 def add():
     return render_template('attendance.html')
 
-@app.route("/searchAttendanceData", methods=[POST'])
+@app.route("/searchAttendanceData", methods=['POST'])
 def searchAttendanceData():                         
     return render_template('GetEmp.html')
 
