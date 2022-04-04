@@ -72,31 +72,31 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container">
      <h5>Employee Information</h5>
          <ul class="w3-ul w3-card-4 w3-white">
-                <li class="w3-padding-16">
-                <form action="/showdata" autocomplete="on" method="POST">
-                <div>
-                   <table>
+            <li class="w3-padding-16">
+              <form action="/showdata" autocomplete="on" method="POST">
+               <div>
+               <table>
                <thead>   
                <tr>   
-	           <th>Attendance ID</th>                                                                                                                 
+	       <th>Attendance ID</th>                                                                                                                 
                <th>Employee ID</th>
                <th>Attendance Date</th>
                <th>Attendance Status</th>                                                                                                            
-	           </tr>
-            </thead>
+	       </tr>
+               </thead>
 			
-			<tbody>
-			<tr>                                                                                                                                  
+	    <tbody>
+	    <tr>                                                                                                                                  
             <td>{{ attendance_ID }}</td>                                                                                                           
             <td>{{ emp_ID }}</td>                                                                                                             
             <td>{{ attendance_date }}</td>                                                                                                         
             <td>{{ attendance_status }}</td>    
             </tr>
-			</tbody>
+	    </tbody>
                    </table>
 
                 </div></li>
-		</form>      
+             </form>      
 	  <button type="submit" href="/attendance.html" class="w3-button w3-dark-grey ">Attendence Check-In</button>
          </ul>
   </div>
