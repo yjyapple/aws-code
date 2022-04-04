@@ -31,6 +31,10 @@ def home():
 def add():
     return render_template('attendance.html')
 
+@app.route("/searchAttendanceData", methods=[POST'])
+def searchAttendanceData():                         
+    return render_template('GetEmp.html')
+
 @app.route("/addAttend", methods=['POST'])
 def addAttend():
     attendance_ID = request.form['attendance_ID']  
@@ -55,8 +59,6 @@ def addAttend():
     print("all modification done...")
     return render_template('GetEmp.html')
     
- 
-   
   
 @app.route("/fetchdata",methods=['POST'])
 def fetchdata():
@@ -68,7 +70,7 @@ def fetchdata():
 @app.route("/showData", methods=['POST'])
 def showData():
 
-    attendance_ID = request.form.get('attendance_ID')
+    attendance_ID = request.form['attendance_ID']
     select_employee_query = "SELECT attendance_ID, emp_ID, attendance_date, attendance_status FROM attendance WHERE attendance_ID = %s"
     cursor = db_conn.cursor()
     
